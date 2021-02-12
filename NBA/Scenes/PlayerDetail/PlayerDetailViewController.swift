@@ -68,8 +68,7 @@ class PlayerDetailViewController: UIViewController, PlayerDetailDisplayLogic
   func displayPlayer(viewModel: PlayerDetail.ViewModel)
   {
     guard let info = viewModel.playerInfo else {
-        let alert = UIAlertController(title: "Errore", message: viewModel.errorMessage, preferredStyle: UIAlertController.Style.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        let alert = AlertFactory.errorAlert(message: viewModel.errorMessage!)
 
         self.present(alert, animated: true, completion: nil)
         return

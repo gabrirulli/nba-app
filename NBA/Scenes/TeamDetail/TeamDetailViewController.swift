@@ -72,11 +72,7 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic, UITabl
         return
     }
     
-    // create the alert
-    let alert = UIAlertController(title: "Errore", message: errorMessage, preferredStyle: UIAlertController.Style.alert)
-
-    // add an action (button)
-    alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+    let alert = AlertFactory.errorAlert(message: errorMessage)
 
     // show the alert
     self.present(alert, animated: true, completion: nil)

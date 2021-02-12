@@ -62,11 +62,7 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
   func displayTeams(viewModel: Teams.ViewModel)
   {
     if !viewModel.success {
-        // create the alert
-        let alert = UIAlertController(title: "Errore", message: viewModel.errorMessage, preferredStyle: UIAlertController.Style.alert)
-
-        // add an action (button)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        let alert = AlertFactory.errorAlert(message: viewModel.errorMessage!)
 
         // show the alert
         self.present(alert, animated: true, completion: nil)
