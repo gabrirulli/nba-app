@@ -12,21 +12,22 @@ class PlayersCollector {
         // If not, download all the players
         let playersDownloaded = self.userDefaults.bool(forKey: "playersDownloaded")
         if playersDownloaded == false {
-            print("daje")
             DispatchQueue.global(qos: .background).async {
                 self.savePlayers() {
                     for n in 1...self.numberOfPlayersHttpCalls {
-                        queue.async {
-                            self.savePlayers(pageNumber: n) {}
+                        queue.sync {
+                            self.savePlayers(pageNumber: n) {
+                                if n == self.numberOfPlayersHttpCalls {
+                                    // Save the `playersDownloaded` key in UserDefaults
+                                    self.userDefaults.set(true, forKey: "playersDownloaded")
+                                    self.userDefaults.synchronize()
+                                }
+                            }
                         }
                     }
                 }
             }
         }
-        
-        // Save the `playersDownloaded` key in UserDefaults
-        self.userDefaults.set(true, forKey: "playersDownloaded")
-        self.userDefaults.synchronize()
     }
     
     private func savePlayers(pageNumber: Int = 0, completionHandler: @escaping () -> Void) {
