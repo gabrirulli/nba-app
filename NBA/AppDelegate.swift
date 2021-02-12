@@ -60,18 +60,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Reset players list saved locally
-        self.userDefaults.set([], forKey: "players")
         let queue = DispatchQueue(label: "com.app.concurrentQueue", attributes: .concurrent)
-        DispatchQueue.global(qos: .background).async {
-            self.getPlayers() {
-                for n in 1...self.numberOfPlayersHttpCalls {
-                    queue.async {
-                        self.getPlayers(pageNumber: n) {}
+        
+        // Check if key `playersDownloaded` was previously saved in UserDefaults
+        // If not, download all the players
+        let playersDownloaded = self.userDefaults.bool(forKey: "playersDownloaded")
+        if playersDownloaded == false {
+            DispatchQueue.global(qos: .background).async {
+                self.getPlayers() {
+                    for n in 1...self.numberOfPlayersHttpCalls {
+                        queue.async {
+                            self.getPlayers(pageNumber: n) {}
+                        }
                     }
                 }
             }
         }
+        
+        self.userDefaults.set(true, forKey: "playersDownloaded")
+        self.userDefaults.synchronize()
 
         // Override point for customization after application launch.
         return true
