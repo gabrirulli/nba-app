@@ -11,7 +11,9 @@ class PlayerDetailPresenter: PlayerDetailPresentationLogic
   
   func presentPlayer(response: PlayerDetail.Response)
   {
-    let viewModel = PlayerDetail.ViewModel()
+    let errorMessage: String? = response.success ? nil : "Si è verificato un errore, riprova più tardi"
+    
+    let viewModel = PlayerDetail.ViewModel(errorMessage: errorMessage, playerInfo: response.playerInfo)
     viewController?.displayPlayer(viewModel: viewModel)
   }
 }

@@ -13,6 +13,7 @@
 		51B868D725D674040096894D /* PlayerDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868D125D674040096894D /* PlayerDetailModels.swift */; };
 		51B868D825D674040096894D /* PlayerDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868D225D674040096894D /* PlayerDetailViewController.swift */; };
 		51B868D925D674040096894D /* PlayerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868D325D674040096894D /* PlayerDetailInteractor.swift */; };
+		51B868E725D67A840096894D /* PlayerStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868E625D67A840096894D /* PlayerStatistic.swift */; };
 		51E2457125D5D69200B3DCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2457025D5D69200B3DCA7 /* AppDelegate.swift */; };
 		51E2457325D5D69200B3DCA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2457225D5D69200B3DCA7 /* SceneDelegate.swift */; };
 		51E2457525D5D69200B3DCA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2457425D5D69200B3DCA7 /* ViewController.swift */; };
@@ -63,6 +64,7 @@
 		51B868D125D674040096894D /* PlayerDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailModels.swift; sourceTree = "<group>"; };
 		51B868D225D674040096894D /* PlayerDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailViewController.swift; sourceTree = "<group>"; };
 		51B868D325D674040096894D /* PlayerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailInteractor.swift; sourceTree = "<group>"; };
+		51B868E625D67A840096894D /* PlayerStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatistic.swift; sourceTree = "<group>"; };
 		51E2456D25D5D69200B3DCA7 /* NBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E2457025D5D69200B3DCA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51E2457225D5D69200B3DCA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -216,6 +218,7 @@
 			children = (
 				51E245A425D5D7B300B3DCA7 /* Team.swift */,
 				51F195E225D5E5DF0016CAB0 /* Player.swift */,
+				51B868E625D67A840096894D /* PlayerStatistic.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -525,6 +528,7 @@
 				51E245D725D5D97900B3DCA7 /* TeamsInteractor.swift in Sources */,
 				51F195D425D5E0700016CAB0 /* TeamDetailInteractor.swift in Sources */,
 				51F195D325D5E06F0016CAB0 /* TeamDetailViewController.swift in Sources */,
+				51B868E725D67A840096894D /* PlayerStatistic.swift in Sources */,
 				51B868D725D674040096894D /* PlayerDetailModels.swift in Sources */,
 				51E245D625D5D97900B3DCA7 /* TeamsViewController.swift in Sources */,
 				51F195D225D5E06F0016CAB0 /* TeamDetailModels.swift in Sources */,
