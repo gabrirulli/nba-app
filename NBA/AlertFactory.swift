@@ -9,7 +9,7 @@ class AlertFactory {
     }
     
     static func loader() -> UIAlertController {
-        let alert = UIAlertController(title: nil, message: "Caricamneto...", preferredStyle: .alert)
+        let alert = UIAlertController(title: nil, message: "Caricamento...", preferredStyle: .alert)
 
         let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
         loadingIndicator.hidesWhenStopped = true

@@ -57,6 +57,12 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic, UITabl
     
     getTeamPlayers()
   }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        waitForPlayersDownload()
+    }
   
   func getTeamPlayers()
   {
@@ -105,5 +111,27 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic, UITabl
         let player = players[indexPath.row]
         
         performSegue(withIdentifier: "PlayerDetailSegue", sender: player.id)
+    }
+    
+    @objc func waitForPlayersDownload() {
+        let playersDownloaded = UserDefaults.standard.bool(forKey: "playersDownloaded")
+        
+        if playersDownloaded == false {
+            // Present the alert only if another alert is not already presented
+            if self.presentedViewController as? UIAlertController == nil {
+                let alert = AlertFactory.loader()
+                self.present(alert, animated: true) {
+                    self.waitForPlayersDownload()
+                }
+            } else {
+                // Call itself after 1 second so we can avoid memory issues
+                perform(#selector(waitForPlayersDownload), with: nil, afterDelay: 1)
+            }
+        } else {
+            // Dismiss alert and reload data
+            dismiss(animated: true) {
+                self.getTeamPlayers()
+            }
+        }
     }
 }
