@@ -15,6 +15,7 @@
 		51B868D925D674040096894D /* PlayerDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868D325D674040096894D /* PlayerDetailInteractor.swift */; };
 		51B868E725D67A840096894D /* PlayerStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868E625D67A840096894D /* PlayerStatistic.swift */; };
 		51B868EF25D68B540096894D /* AlertFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868EE25D68B540096894D /* AlertFactory.swift */; };
+		51B868FB25D6933D0096894D /* PlayersCollector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51B868FA25D6933D0096894D /* PlayersCollector.swift */; };
 		51E2457125D5D69200B3DCA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2457025D5D69200B3DCA7 /* AppDelegate.swift */; };
 		51E2457325D5D69200B3DCA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2457225D5D69200B3DCA7 /* SceneDelegate.swift */; };
 		51E2457525D5D69200B3DCA7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E2457425D5D69200B3DCA7 /* ViewController.swift */; };
@@ -67,6 +68,7 @@
 		51B868D325D674040096894D /* PlayerDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailInteractor.swift; sourceTree = "<group>"; };
 		51B868E625D67A840096894D /* PlayerStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatistic.swift; sourceTree = "<group>"; };
 		51B868EE25D68B540096894D /* AlertFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertFactory.swift; sourceTree = "<group>"; };
+		51B868FA25D6933D0096894D /* PlayersCollector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayersCollector.swift; sourceTree = "<group>"; };
 		51E2456D25D5D69200B3DCA7 /* NBA.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NBA.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		51E2457025D5D69200B3DCA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		51E2457225D5D69200B3DCA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				51E2457E25D5D69300B3DCA7 /* Info.plist */,
 				51F195A325D5DA9D0016CAB0 /* HttpRequestManager.swift */,
 				51B868EE25D68B540096894D /* AlertFactory.swift */,
+				51B868FA25D6933D0096894D /* PlayersCollector.swift */,
 			);
 			path = NBA;
 			sourceTree = "<group>";
@@ -529,6 +532,7 @@
 				51E2457325D5D69200B3DCA7 /* SceneDelegate.swift in Sources */,
 				51F195B125D5DAE10016CAB0 /* TeamTableViewCell.swift in Sources */,
 				51E245D725D5D97900B3DCA7 /* TeamsInteractor.swift in Sources */,
+				51B868FB25D6933D0096894D /* PlayersCollector.swift in Sources */,
 				51F195D425D5E0700016CAB0 /* TeamDetailInteractor.swift in Sources */,
 				51F195D325D5E06F0016CAB0 /* TeamDetailViewController.swift in Sources */,
 				51B868E725D67A840096894D /* PlayerStatistic.swift in Sources */,

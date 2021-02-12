@@ -84,7 +84,7 @@ class PlayerDetailViewController: UIViewController, PlayerDetailDisplayLogic
         self.positionLabel.text = info.player.position
         
         if let heightFeet = info.player.heightFeet {
-            self.heightFeetLabel.text = "\(self.heightFeetLabel.text!) \(String(heightFeet)))"
+            self.heightFeetLabel.text = "\(self.heightFeetLabel.text!) \(String(heightFeet))"
         }
         
         if let heightInches = info.player.heightInches {
