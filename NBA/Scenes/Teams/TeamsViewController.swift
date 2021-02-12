@@ -51,7 +51,7 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
     super.viewDidLoad()
     
     navigationItem.title = "Teams"
-    navigationController?.navigationBar.barTintColor = UIColor.green
+    self.navigationController?.navigationBar.tintColor = UIColor.white;
     
     tableView.delegate = self
     tableView.dataSource = self
