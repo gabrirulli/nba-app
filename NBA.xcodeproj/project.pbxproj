@@ -23,6 +23,11 @@
 		51E245D725D5D97900B3DCA7 /* TeamsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51E245D125D5D97900B3DCA7 /* TeamsInteractor.swift */; };
 		51F195A425D5DA9D0016CAB0 /* HttpRequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195A325D5DA9D0016CAB0 /* HttpRequestManager.swift */; };
 		51F195B125D5DAE10016CAB0 /* TeamTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195B025D5DAE10016CAB0 /* TeamTableViewCell.swift */; };
+		51F195CF25D5E06F0016CAB0 /* TeamDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195C925D5E06F0016CAB0 /* TeamDetailPresenter.swift */; };
+		51F195D225D5E06F0016CAB0 /* TeamDetailModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195CC25D5E06F0016CAB0 /* TeamDetailModels.swift */; };
+		51F195D325D5E06F0016CAB0 /* TeamDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195CD25D5E06F0016CAB0 /* TeamDetailViewController.swift */; };
+		51F195D425D5E0700016CAB0 /* TeamDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195CE25D5E06F0016CAB0 /* TeamDetailInteractor.swift */; };
+		51F195E325D5E5DF0016CAB0 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 51F195E225D5E5DF0016CAB0 /* Player.swift */; };
 		91EF40400CD7D51CCD580BD3 /* Pods_NBATests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8D841610046D52D1800E09AA /* Pods_NBATests.framework */; };
 		C06DD2429FC166A3AEB744CA /* Pods_NBA_NBAUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F47B5DC7B2F68314DA6C11CD /* Pods_NBA_NBAUITests.framework */; };
 /* End PBXBuildFile section */
@@ -69,6 +74,11 @@
 		51E245D125D5D97900B3DCA7 /* TeamsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsInteractor.swift; sourceTree = "<group>"; };
 		51F195A325D5DA9D0016CAB0 /* HttpRequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestManager.swift; sourceTree = "<group>"; };
 		51F195B025D5DAE10016CAB0 /* TeamTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableViewCell.swift; sourceTree = "<group>"; };
+		51F195C925D5E06F0016CAB0 /* TeamDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailPresenter.swift; sourceTree = "<group>"; };
+		51F195CC25D5E06F0016CAB0 /* TeamDetailModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailModels.swift; sourceTree = "<group>"; };
+		51F195CD25D5E06F0016CAB0 /* TeamDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailViewController.swift; sourceTree = "<group>"; };
+		51F195CE25D5E06F0016CAB0 /* TeamDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamDetailInteractor.swift; sourceTree = "<group>"; };
+		51F195E225D5E5DF0016CAB0 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		8D841610046D52D1800E09AA /* Pods_NBATests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NBATests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA8751BE0EA0044066EA71F2 /* Pods-NBATests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBATests.release.xcconfig"; path = "Target Support Files/Pods-NBATests/Pods-NBATests.release.xcconfig"; sourceTree = "<group>"; };
 		B03FC2882BB2D736C4CECEC2 /* Pods-NBA.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NBA.debug.xcconfig"; path = "Target Support Files/Pods-NBA/Pods-NBA.debug.xcconfig"; sourceTree = "<group>"; };
@@ -176,6 +186,7 @@
 			isa = PBXGroup;
 			children = (
 				51E245A425D5D7B300B3DCA7 /* Team.swift */,
+				51F195E225D5E5DF0016CAB0 /* Player.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -183,6 +194,7 @@
 		51E245CB25D5D96900B3DCA7 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				51F195C825D5E0580016CAB0 /* TeamDetail */,
 				51F1959A25D5DA4F0016CAB0 /* Teams */,
 			);
 			path = Scenes;
@@ -206,6 +218,17 @@
 				51F195B025D5DAE10016CAB0 /* TeamTableViewCell.swift */,
 			);
 			path = TableViewCell;
+			sourceTree = "<group>";
+		};
+		51F195C825D5E0580016CAB0 /* TeamDetail */ = {
+			isa = PBXGroup;
+			children = (
+				51F195C925D5E06F0016CAB0 /* TeamDetailPresenter.swift */,
+				51F195CC25D5E06F0016CAB0 /* TeamDetailModels.swift */,
+				51F195CD25D5E06F0016CAB0 /* TeamDetailViewController.swift */,
+				51F195CE25D5E06F0016CAB0 /* TeamDetailInteractor.swift */,
+			);
+			path = TeamDetail;
 			sourceTree = "<group>";
 		};
 		C9D2DA3A8B4E841523F1CC7B /* Pods */ = {
@@ -460,14 +483,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				51E245A525D5D7B300B3DCA7 /* Team.swift in Sources */,
+				51F195CF25D5E06F0016CAB0 /* TeamDetailPresenter.swift in Sources */,
 				51E245D525D5D97900B3DCA7 /* TeamsModels.swift in Sources */,
 				51E2457525D5D69200B3DCA7 /* ViewController.swift in Sources */,
 				51E2457125D5D69200B3DCA7 /* AppDelegate.swift in Sources */,
 				51E2457325D5D69200B3DCA7 /* SceneDelegate.swift in Sources */,
 				51F195B125D5DAE10016CAB0 /* TeamTableViewCell.swift in Sources */,
 				51E245D725D5D97900B3DCA7 /* TeamsInteractor.swift in Sources */,
+				51F195D425D5E0700016CAB0 /* TeamDetailInteractor.swift in Sources */,
+				51F195D325D5E06F0016CAB0 /* TeamDetailViewController.swift in Sources */,
 				51E245D625D5D97900B3DCA7 /* TeamsViewController.swift in Sources */,
+				51F195D225D5E06F0016CAB0 /* TeamDetailModels.swift in Sources */,
 				51E245D225D5D97900B3DCA7 /* TeamsPresenter.swift in Sources */,
+				51F195E325D5E5DF0016CAB0 /* Player.swift in Sources */,
 				51F195A425D5DA9D0016CAB0 /* HttpRequestManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

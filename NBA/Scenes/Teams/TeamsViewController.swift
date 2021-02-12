@@ -39,7 +39,9 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
-    /// TODO: pass team id to view controller
+    if let teamDetailVC = segue.destination as? TeamDetailViewController {
+        teamDetailVC.teamId = sender as? Int
+    }
   }
   
   // MARK: View lifecycle
@@ -94,5 +96,11 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let team = teams[indexPath.row]
+        
+        performSegue(withIdentifier: "TeamDetailSegue", sender: team.id)
     }
 }

@@ -59,6 +59,7 @@
                     <navigationItem key="navigationItem" id="3RV-O2-p4Q"/>
                     <connections>
                         <outlet property="tableView" destination="haY-wC-HOI" id="iDv-fI-Huo"/>
+                        <segue destination="DFe-Mh-A6O" kind="show" identifier="TeamDetailSegue" id="5lj-7I-BhA"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -82,6 +83,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OVY-Xl-QUI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="90.404797601199405"/>
+        </scene>
+        <!--Team Detail View Controller-->
+        <scene sceneID="H8K-eD-bap">
+            <objects>
+                <viewController id="DFe-Mh-A6O" customClass="TeamDetailViewController" customModule="NBA" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="k87-hN-ro7">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="rhi-nQ-pcs"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="vQ0-SU-zvk"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gKv-CL-mqQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1937" y="90"/>
         </scene>
     </scenes>
     <resources>
