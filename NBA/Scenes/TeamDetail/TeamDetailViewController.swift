@@ -47,10 +47,13 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic, UITabl
   // MARK: View lifecycle
     
     var teamId: Int?
+    var navigationTitle: String?
   
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    navigationItem.title = navigationTitle
     
     tableView.delegate = self
     tableView.dataSource = self

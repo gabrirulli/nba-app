@@ -40,7 +40,9 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
   override func prepare(for segue: UIStoryboardSegue, sender: Any?)
   {
     if let teamDetailVC = segue.destination as? TeamDetailViewController {
-        teamDetailVC.teamId = sender as? Int
+        let team = sender as! Team
+        teamDetailVC.teamId = team.id
+        teamDetailVC.navigationTitle = team.abbreviation
     }
   }
   
@@ -106,6 +108,6 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let team = teams[indexPath.row]
         
-        performSegue(withIdentifier: "TeamDetailSegue", sender: team.id)
+        performSegue(withIdentifier: "TeamDetailSegue", sender: team)
     }
 }
