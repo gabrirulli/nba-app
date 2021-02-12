@@ -5,7 +5,7 @@ protocol TeamDetailDisplayLogic: class
   func displayPlayers(viewModel: TeamDetail.ViewModel)
 }
 
-class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic
+class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic, UITableViewDelegate, UITableViewDataSource
 {
   var interactor: TeamDetailBusinessLogic?
 
@@ -48,6 +48,10 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic
   override func viewDidLoad()
   {
     super.viewDidLoad()
+    
+    tableView.delegate = self
+    tableView.dataSource = self
+    
     getTeamPlayers()
   }
   
@@ -60,6 +64,8 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic
   func displayPlayers(viewModel: TeamDetail.ViewModel)
   {
     guard let errorMessage = viewModel.errorMessage else {
+        players = viewModel.players
+        tableView.reloadData()
         return
     }
     
@@ -72,4 +78,27 @@ class TeamDetailViewController: UIViewController, TeamDetailDisplayLogic
     // show the alert
     self.present(alert, animated: true, completion: nil)
   }
+    
+    // MARK: table view
+    var players: [Player] = []
+    @IBOutlet weak var tableView: UITableView!
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return players.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell: PlayerTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PlayerTableViewCell") as! PlayerTableViewCell
+        
+        let player = players[indexPath.row]
+        cell.positionLabel.text = player.position
+        cell.firstNameLabel.text = player.firstName
+        cell.lastNameLabel.text = player.lastName
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
 }
