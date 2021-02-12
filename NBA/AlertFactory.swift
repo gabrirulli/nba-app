@@ -7,4 +7,18 @@ class AlertFactory {
         
         return alert
     }
+    
+    static func loader() -> UIAlertController {
+        let alert = UIAlertController(title: nil, message: "Caricamneto...", preferredStyle: .alert)
+
+        let loadingIndicator = UIActivityIndicatorView(frame: CGRect(x: 10, y: 5, width: 50, height: 50))
+        loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.medium
+        loadingIndicator.color = UIColor.black
+        loadingIndicator.startAnimating();
+
+        alert.view.addSubview(loadingIndicator)
+        
+        return alert
+    }
 }

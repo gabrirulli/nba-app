@@ -56,19 +56,28 @@ class TeamsViewController: UIViewController, TeamsDisplayLogic, UITableViewDeleg
     tableView.delegate = self
     tableView.dataSource = self
     
-    interactor?.getAllTeams(request: Teams.Request())
+    getTeams()
   }
+    
+    func getTeams() {
+        let alert = AlertFactory.loader()
+        present(alert, animated: true) {
+            self.interactor?.getAllTeams(request: Teams.Request())
+        }
+    }
   
   func displayTeams(viewModel: Teams.ViewModel)
   {
-    if !viewModel.success {
-        let alert = AlertFactory.errorAlert(message: viewModel.errorMessage!)
+    dismiss(animated: false) {
+        if !viewModel.success {
+            let alert = AlertFactory.errorAlert(message: viewModel.errorMessage!)
 
-        // show the alert
-        self.present(alert, animated: true, completion: nil)
-    } else {
-        teams = viewModel.teams
-        tableView.reloadData()
+            // show the alert
+            self.present(alert, animated: true, completion: nil)
+        } else {
+            self.teams = viewModel.teams
+            self.tableView.reloadData()
+        }
     }
   }
     

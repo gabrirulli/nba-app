@@ -47,8 +47,11 @@ class PlayerDetailViewController: UIViewController, PlayerDetailDisplayLogic
   
   func getPlayer()
   {
-    let request = PlayerDetail.Request(playerId: playerId ?? 0)
-    interactor?.getPlayer(request: request)
+    let alert = AlertFactory.loader()
+    present(alert, animated: true) {
+        let request = PlayerDetail.Request(playerId: self.playerId ?? 0)
+        self.interactor?.getPlayer(request: request)
+    }
   }
     
     // MARK: display info
@@ -67,33 +70,36 @@ class PlayerDetailViewController: UIViewController, PlayerDetailDisplayLogic
     
   func displayPlayer(viewModel: PlayerDetail.ViewModel)
   {
-    guard let info = viewModel.playerInfo else {
-        let alert = AlertFactory.errorAlert(message: viewModel.errorMessage!)
+    // Dismiss loader
+    dismiss(animated: false) {
+        guard let info = viewModel.playerInfo else {
+            let alert = AlertFactory.errorAlert(message: viewModel.errorMessage!)
 
-        self.present(alert, animated: true, completion: nil)
-        return
+            self.present(alert, animated: true, completion: nil)
+            return
+        }
+        
+        self.firstNameLabel.text = info.player.firstName
+        self.lastNameLabel.text = info.player.lastName
+        self.positionLabel.text = info.player.position
+        
+        if let heightFeet = info.player.heightFeet {
+            self.heightFeetLabel.text = "\(self.heightFeetLabel.text!) \(String(heightFeet)))"
+        }
+        
+        if let heightInches = info.player.heightInches {
+            self.heightInchesLabel.text = "\(self.heightInchesLabel.text!) \(String(heightInches))"
+        }
+        
+        if let weightPounds = info.player.weightPounds {
+            self.weightPoundsLabel.text = "\(self.weightPoundsLabel.text!) \(String(weightPounds))"
+        }
+        
+        self.astLabel.text = "\(self.astLabel.text!) \(String(info.ast))"
+        self.minLabel.text = "\(self.minLabel.text!) \(info.min)"
+        self.ptsLabel.text = "\(self.ptsLabel.text!) \(String(info.pts))"
+        self.turnoverLabel.text = "\(self.turnoverLabel.text!) \(String(info.turnover))"
+        self.rebLabel.text = "\(self.rebLabel.text!) \(String(info.reb))"
     }
-    
-    firstNameLabel.text = info.player.firstName
-    lastNameLabel.text = info.player.lastName
-    positionLabel.text = info.player.position
-    
-    if let heightFeet = info.player.heightFeet {
-        heightFeetLabel.text = "\(heightFeetLabel.text!) \(String(heightFeet)))"
-    }
-    
-    if let heightInches = info.player.heightInches {
-        heightInchesLabel.text = "\(heightInchesLabel.text!) \(String(heightInches))"
-    }
-    
-    if let weightPounds = info.player.weightPounds {
-        weightPoundsLabel.text = "\(weightPoundsLabel.text!) \(String(weightPounds))"
-    }
-    
-    astLabel.text = "\(astLabel.text!) \(String(info.ast))"
-    minLabel.text = "\(minLabel.text!) \(info.min)"
-    ptsLabel.text = "\(ptsLabel.text!) \(String(info.pts))"
-    turnoverLabel.text = "\(turnoverLabel.text!) \(String(info.turnover))"
-    rebLabel.text = "\(rebLabel.text!) \(String(info.reb))"
   }
 }
